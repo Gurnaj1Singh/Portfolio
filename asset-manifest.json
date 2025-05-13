@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.3a130fe4.css",
+    "main.js": "/Portfolio/static/js/main.93e4f5ba.js",
+    "static/css/64.bba8fa55.chunk.css": "/Portfolio/static/css/64.bba8fa55.chunk.css",
+    "static/js/64.41912c0a.chunk.js": "/Portfolio/static/js/64.41912c0a.chunk.js",
+    "static/css/769.b3cbb36b.chunk.css": "/Portfolio/static/css/769.b3cbb36b.chunk.css",
+    "static/js/769.6b18baac.chunk.js": "/Portfolio/static/js/769.6b18baac.chunk.js",
+    "static/media/opencvLogo.png": "/Portfolio/static/media/opencvLogo.ea04aa131ec8813b5412.png",
+    "static/media/Montserrat-Regular.ttf": "/Portfolio/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/NITJ.png": "/Portfolio/static/media/NITJ.5b15a416f75ea7c8ac08.png",
+    "static/media/chessLogo.png": "/Portfolio/static/media/chessLogo.e09f9985fa8b830a0c1a.png",
+    "static/media/Agustina.woff": "/Portfolio/static/media/Agustina.eb0c59dda4cc308cba96.woff",
+    "static/media/githubLogo.png": "/Portfolio/static/media/githubLogo.eab2a5b9d9e2e1b27569.png",
+    "static/media/webDevLogo.png": "/Portfolio/static/media/webDevLogo.b49baef61329b65ce63e.png",
+    "static/media/manOnTable.svg": "/Portfolio/static/media/manOnTable.8f117eb207e57ed8f89d67d595aceb45.svg",
+    "static/media/XavierLogo.png": "/Portfolio/static/media/XavierLogo.5754e6da39e7e3eb95db.png",
+    "static/media/contactMailDark.svg": "/Portfolio/static/media/contactMailDark.1db650d351729a0f17b4e3104e6a7b7a.svg",
+    "static/media/sfscs.png": "/Portfolio/static/media/sfscs.93bd7e9f8f418b4ac724.png",
+    "static/media/developerActivity.svg": "/Portfolio/static/media/developerActivity.2c0445cae86f4243433a2f5a22b2c031.svg",
+    "static/media/skill.svg": "/Portfolio/static/media/skill.35a147662ab0a1d15e579690446e0258.svg",
+    "static/media/resume.pdf": "/Portfolio/static/media/resume.f0f733dd3cd732b39262.pdf",
+    "static/media/saayaHealthLogo.webp": "/Portfolio/static/media/saayaHealthLogo.60b27d1f184fadfce43a.webp",
+    "static/media/nextuLogo.webp": "/Portfolio/static/media/nextuLogo.e033dbfa4c58c0a906aa.webp",
+    "index.html": "/Portfolio/index.html",
+    "static/media/talksCardBack.svg": "/Portfolio/static/media/talksCardBack.73ed1545d58273ba64b0.svg",
+    "main.3a130fe4.css.map": "/Portfolio/static/css/main.3a130fe4.css.map",
+    "main.93e4f5ba.js.map": "/Portfolio/static/js/main.93e4f5ba.js.map",
+    "64.bba8fa55.chunk.css.map": "/Portfolio/static/css/64.bba8fa55.chunk.css.map",
+    "64.41912c0a.chunk.js.map": "/Portfolio/static/js/64.41912c0a.chunk.js.map",
+    "769.b3cbb36b.chunk.css.map": "/Portfolio/static/css/769.b3cbb36b.chunk.css.map",
+    "769.6b18baac.chunk.js.map": "/Portfolio/static/js/769.6b18baac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a130fe4.css",
+    "static/js/main.93e4f5ba.js"
+  ]
+}
