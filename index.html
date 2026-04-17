@@ -1,1 +1,324 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>DeveloperFolio | Developer Portfolio Template</title><meta name="title" content="DeveloperFolio | Developer Portfolio Template"><meta name="description" content="Software Developer Portfolio Template that helps you showcase your work and skills as a software developer"><meta property="og:type" content="website"><meta property="og:url" content="https://developerfolio.js.org/"><meta property="og:title" content="DeveloperFolio | Developer Portfolio Template"><meta property="og:description" content="Software Developer Portfolio Template that helps you showcase your work and skills as a software developer"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://developerfolio.js.org/"><meta property="twitter:title" content="DeveloperFolio | Developer Portfolio Template"><meta property="twitter:description" content="Software Developer Portfolio Template that helps you showcase your work and skills as a software developer"><meta name="msapplication-TileColor" content="#603cba"><meta name="theme-color" content="#6c63ff"/><link rel="icon" type="image/png" sizes="32x32" href="/Portfolio/favicon-32x32.png?v8=qAJ44G5Bm7"><link rel="icon" type="image/png" sizes="16x16" href="/Portfolio/favicon-16x16.png?v8=qAJ44G5Bm7"><link rel="mask-icon" href="/Portfolio/safari-pinned-tab.svg?v8=qAJ44G5Bm7" color="#885bd5"><link rel="shortcut icon" href="/Portfolio/favicon.ico?v8=qAJ44G5Bm7"><link rel="apple-touch-icon" sizes="180x180" href="/Portfolio/apple-touch-icon.png?v8=qAJ44G5Bm7"><link rel="manifest" href="/Portfolio/manifest.json"/><link rel="preload" href="/static/media/Montserrat-Regular.ee653992.ttf" as="font" type="font/woff" crossorigin><link rel="preload" href="/static/media/Agustina.21f233e1.woff" as="font" type="font/woff" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=UA-135618960-2"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-135618960-2")</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.4/css/all.min.css"><script defer="defer" src="/Portfolio/static/js/main.93e4f5ba.js"></script><link href="/Portfolio/static/css/main.3a130fe4.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Gurnaj Singh — Full-Stack Developer & CS Student</title>
+  <meta name="description" content="Portfolio of Gurnaj Singh, a B.Tech Computer Science student at NIT Jalandhar building full-stack web apps with React, FastAPI, and exploring AI/ML." />
+  <meta name="author" content="Gurnaj Singh" />
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gurnaj Singh — Full-Stack Developer & CS Student" />
+  <meta property="og:description" content="B.Tech CSE @ NIT Jalandhar. Full-stack web development with React, FastAPI, MySQL — plus AI/ML experiments." />
+  <meta property="og:url" content="https://gurnaj1singh.github.io/Portfolio/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script>
+    // Apply theme before paint to avoid FOUC.
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      const theme = saved || (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="Gurnaj Singh — home">
+        <span class="brand-mark" aria-hidden="true">GS</span>
+        <span class="brand-name">Gurnaj Singh</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list" id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navList">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="dot"></span> Available for internships & collaborations</p>
+          <h1 class="hero-title">
+            Hi, I'm <span class="grad-text">Gurnaj Singh</span>.
+            <br />I build <span class="accent">full-stack web apps</span> and explore <span class="accent">AI/ML</span>.
+          </h1>
+          <p class="hero-sub" id="heroSub"></p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View my work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+            <a href="assets/files/resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
+          </div>
+          <ul class="social-row" id="socialRow" aria-label="Social links"></ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="avatar-ring">
+            <img id="heroAvatar" alt="Gurnaj Singh" width="240" height="240" loading="eager" decoding="async" />
+          </div>
+          <div class="floating-card card-top" aria-hidden="true">
+            <i class="devicon-react-original colored"></i>
+            <span>React</span>
+          </div>
+          <div class="floating-card card-bottom" aria-hidden="true">
+            <i class="devicon-python-plain colored"></i>
+            <span>Python</span>
+          </div>
+          <div class="floating-card card-right" aria-hidden="true">
+            <span class="pulse"></span>
+            <span>Building in public</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll to about section">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">01 — About</p>
+          <h2 class="section-title">A quick intro</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>I'm a <strong>B.Tech Computer Science</strong> student at <strong>NIT Jalandhar</strong>, passionate about the craft of building software. I enjoy designing clean interfaces, shipping robust APIs, and tinkering with machine-learning ideas that solve real problems.</p>
+            <p>Day-to-day I reach for <strong>React</strong> and <strong>Tailwind</strong> on the front end, <strong>FastAPI</strong> with <strong>MySQL</strong> on the back, and <strong>Python + OpenCV</strong> when computer vision is on the table. I care about details — typography, micro-interactions, and code that other people can read.</p>
+            <p>When I'm not shipping, I'm competing in hackathons, reading about systems, or writing small open-source experiments.</p>
+          </div>
+
+          <aside class="about-facts reveal">
+            <h3>Quick facts</h3>
+            <ul class="facts">
+              <li><span>Based in</span><strong>Jalandhar, India</strong></li>
+              <li><span>Focus</span><strong>Full-stack & AI/ML</strong></li>
+              <li><span>Degree</span><strong>B.Tech CSE, 2026</strong></li>
+              <li><span>Open to</span><strong>SWE internships</strong></li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="edu-wrap reveal">
+          <h3 class="sub-heading">Education</h3>
+          <ol class="timeline" id="educationTimeline"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">02 — Skills</p>
+          <h2 class="section-title">What I work with</h2>
+          <p class="section-lead">Full-stack developer exploring AI and open-source technologies.</p>
+        </header>
+
+        <div class="skills-grid">
+          <ul class="do-list reveal" id="doList"></ul>
+          <div class="tech-grid reveal" id="techGrid" aria-label="Tech stack"></div>
+        </div>
+
+        <div class="proficiency reveal">
+          <h3 class="sub-heading">Proficiency</h3>
+          <ul class="bars" id="proficiencyBars"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">03 — Experience</p>
+          <h2 class="section-title">Where I've been</h2>
+        </header>
+        <ol class="timeline timeline-wide reveal" id="experienceTimeline"></ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">04 — Projects</p>
+          <h2 class="section-title">Things I've built</h2>
+          <p class="section-lead">Pulled live from <a href="https://github.com/Gurnaj1Singh" target="_blank" rel="noopener">GitHub</a>. Filter by language, sort by stars or recency.</p>
+        </header>
+
+        <div class="projects-toolbar reveal">
+          <div class="filter-group" role="group" aria-label="Filter by language">
+            <div class="chips" id="languageChips"></div>
+          </div>
+          <div class="sort-group">
+            <label for="sortSelect" class="visually-hidden">Sort projects</label>
+            <select id="sortSelect" class="select">
+              <option value="updated">Most recent</option>
+              <option value="stars">Most stars</option>
+              <option value="forks">Most forks</option>
+              <option value="name">Name (A–Z)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="projectsState" class="projects-state" aria-live="polite"></div>
+        <div class="projects-grid" id="projectsGrid"></div>
+
+        <div class="projects-cta reveal">
+          <a class="btn btn-outline" href="https://github.com/Gurnaj1Singh?tab=repositories" target="_blank" rel="noopener">
+            See all on GitHub
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="section-kicker">05 — Highlights</p>
+          <h2 class="section-title">Achievements & certifications</h2>
+          <p class="section-lead">Courses, certifications, and noteworthy projects that reflect my learning journey.</p>
+        </header>
+        <div class="highlight-grid" id="highlightGrid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-inner">
+        <header class="section-head reveal">
+          <p class="section-kicker">06 — Contact</p>
+          <h2 class="section-title">Let's build something</h2>
+          <p class="section-lead">My inbox is open — drop a message about a role, a project, or just to say hi.</p>
+        </header>
+
+        <div class="contact-grid">
+          <ul class="contact-list reveal">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div>
+                <span>Email</span>
+                <a href="mailto:gurnajsinghmann@gmail.com">gurnajsinghmann@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <div>
+                <span>Phone</span>
+                <a href="tel:+918727036163">+91 8727 036 163</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <span>Location</span>
+                <strong>Jalandhar, Punjab — India</strong>
+              </div>
+            </li>
+            <li class="contact-socials">
+              <span>Find me on</span>
+              <ul class="mini-social" id="miniSocial"></ul>
+            </li>
+          </ul>
+
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <p class="form-note" id="formNote" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Gurnaj Singh. Built from scratch with HTML, CSS &amp; JS.</p>
+      <ul class="mini-social" id="footerSocial"></ul>
+    </div>
+  </footer>
+
+  <!-- Project detail modal -->
+  <div class="modal" id="repoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close icon-btn" data-close aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-meta" id="modalMeta"></div>
+      <div class="modal-actions" id="modalActions"></div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
