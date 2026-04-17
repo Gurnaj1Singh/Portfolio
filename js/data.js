@@ -4,13 +4,13 @@
 export const profile = {
   name: 'Gurnaj Singh',
   handle: 'Gurnaj1Singh',
-  title: 'Computer Science Student & Full-Stack Developer',
+  title: 'Computer Science Student',
   tagline: 'Full-stack developer exploring AI & open-source technologies',
   summary:
-    "I'm a B.Tech Computer Science student at NIT Jalandhar, passionate about web development and AI/ML. I build full-stack web apps with React, FastAPI, and MySQL, and I'm exploring machine learning to solve real-world problems.",
+    "Software Engineering student at NIT Jalandhar specializing in the intersection of Scalable Web Systems and Applied AI. Currently architecting high-performance backends with FastAPI and PostgreSQL, while researching Reinforcement Learning and Semantic Analysis to bridge the gap between robust software and intelligent automation.",
   location: 'Jalandhar, Punjab, India',
   email: 'gurnajsinghmann@gmail.com',
-  phone: '+91-8727036163',
+  phone: '+91-7717352608',
   resume: 'assets/files/resume.pdf',
   avatar: 'https://avatars.githubusercontent.com/Gurnaj1Singh',
 };
@@ -44,11 +44,29 @@ export const socials = [
 ];
 
 // "What I do" — skills section
-export const doList = [
-  'Build responsive front-end interfaces using React and Tailwind CSS',
-  'Develop RESTful APIs with FastAPI and integrate with MySQL databases',
-  'Work on real-time projects like attendance systems using face recognition and location verification',
-  'Explore machine learning and computer vision using Python and OpenCV',
+export const professionalExperience = [
+  {
+    category: 'Full-Stack Orchestration',
+    project: 'Assignment Master',
+    description: 'Developed an end-to-end academic management ecosystem featuring automated workflow pipelines, role-based access control (RBAC), and complex state management for multi-user synchronization.',
+    stack: ['React', 'Node.js', 'Redis', 'PostgreSQL'],
+    complexity: 'High',
+  },
+  {
+    category: 'Frontend Architecture',
+    description: 'Architecting high-performance, responsive interfaces using React.js and Tailwind CSS, prioritizing component reusability and UX consistency.',
+    stack: ['React', 'Tailwind CSS', 'Headless UI'],
+  },
+  {
+    category: 'Backend & Systems',
+    description: 'Engineering scalable RESTful microservices with FastAPI and optimizing relational schemas in MySQL for high-concurrency environments.',
+    stack: ['FastAPI', 'MySQL', 'SQLAlchemy', 'Pydantic'],
+  },
+  {
+    category: 'Computer Vision & AI',
+    description: 'Implementing biometric security solutions, including real-time facial recognition and geofencing-based attendance verification systems.',
+    stack: ['Python', 'OpenCV', 'MediaPipe', 'NumPy'],
+  },
 ];
 
 // Tech stack — uses devicon icon classes (bundled via CDN).
@@ -69,18 +87,12 @@ export const techStack = [
   { name: 'Linux', icon: 'devicon-linux-plain colored' },
 ];
 
-export const proficiency = [
-  { name: 'Backend', value: 90 },
-  { name: 'Programming', value: 90 },
-  { name: 'Frontend', value: 70 },
-];
-
 export const education = [
   {
     school: 'DR. B.R. Ambedkar National Institute of Technology, Jalandhar',
     degree: 'B.Tech in Computer Science & Engineering',
     date: 'Sep 2022 – Jun 2026',
-    desc: 'Ongoing — focus on full-stack web development, data structures & algorithms, and AI/ML.',
+    desc: 'Ongoing',
   },
   {
     school: 'St. Fateh Singh Convent School',
@@ -98,28 +110,101 @@ export const education = [
 
 export const experience = [
   {
-    role: 'B.Tech Computer Science Student',
+    role: 'Computer Science & Engineering',
     company: 'NIT Jalandhar',
-    date: 'Dec 2022 – Present',
-    desc: 'Pursuing a degree in Computer Science with a focus on full-stack web development and AI/ML.',
+    date: 'Aug 2022 – May 2026',
+    desc: 'Specializing in Scalable Systems and Applied Machine Learning.',
     bullets: [
-      'Built and maintained real-world projects like a Smart Hostel Attendance System',
-      'Hands-on experience with React.js, FastAPI, MySQL, Python, and OpenCV',
-      'Active in tech events and hackathons to sharpen practical skills',
+      'Architecting a Major Project: Semantic Plagiarism Detector utilizing SBERT models for deep contextual analysis and text embeddings.',
+      'Developed a production-grade Biometric Attendance System integrating real-time Facial Recognition and location-based verification.',
+      'Maintaining a 7.14 CGPA while completing advanced specializations in Machine Learning and Deep Learning (Andrew Ng).',
     ],
   },
   {
-    role: 'Personal & Open-Source Projects',
-    company: 'GitHub · Gurnaj1Singh',
+    role: 'Full-Stack & AI Engineer (Independent)',
+    company: 'Project Lab · GitHub',
     date: '2023 – Present',
-    desc: 'Shipping personal and open-source projects while learning full-stack development in the open.',
+    desc: 'Engineering high-concurrency applications and autonomous AI agents.',
     bullets: [
-      'Developed a React-based chess game and deployed on GitHub Pages',
-      'Built full-stack apps with FastAPI and SQL for college utilities',
-      'Experimenting with machine-learning models and face recognition using Python',
+      'Developed "Assignment Master," an ecosystem featuring RBAC, dynamic submission engines, and optimized PostgreSQL schemas using SQLAlchemy.',
+      'Designing a Reinforcement Learning agent for Mini Militia, focusing on autonomous navigation and real-time decision-making for AI streaming.',
+      'Engineered scalable REST APIs with FastAPI, implementing Dependency Injection and connection pooling for high-throughput environments.',
+      'Managing a Linux-first development workflow, including automated security auditing and system-level scripting.',
     ],
   },
 ];
+
+// Certifications — two sources merged at render time.
+// `coursera` entries are enriched live from api.coursera.org (title, image,
+// issuer, description). Only the three fields below are needed per entry.
+// `manual` entries are shown as-is.
+export const certifications = {
+  coursera: [
+    {
+      slug: 'introduction-git-github',      // from coursera.org/learn/<slug>
+      credentialId: 'WRT82BFXA4H3',         // from the verify URL
+      completedOn: '2024-08-17',            // ISO date (YYYY-MM-DD)
+      skills: [
+        'Git',
+        'GitHub',
+        'Version Control',
+        'Command-Line Interface',
+        'Code Review',
+        'Continuous Integration',
+        'Collaborative Software',
+      ],
+    },
+    {
+      slug: 'machine-learning',      // from coursera.org/learn/<slug>
+      credentialId: 'B2HVPNR52NY1',         // from the verify URL
+      completedOn: '2025-08-21',            // ISO date (YYYY-MM-DD)
+      skills: [
+        'Jupyter',
+        'Unsupervised Learning',
+        'Artificial Intelligence',
+        'Data Preprocessing',
+        'Regression Analysis',
+        'Predictive Modeling',
+        'Python Programming',
+        'Supervised Learning',
+        'Machine Learning',
+        'Classification Algorithms',
+        'NumPy',
+        'Scikit Learn (Machine Learning Library)',
+      ],
+    },
+    {
+      slug: 'advanced-learning-algorithms',      // from coursera.org/learn/<slug>
+      credentialId: '9G1R1C9CT3QM',         // from the verify URL
+      completedOn: '2025-12-25',            // ISO date (YYYY-MM-DD)
+      skills: [
+        'Logistic Regression',
+        'Tensorflow',
+        'Decision Tree Learning',
+        'Machine Learning', 
+        'Data Ethics',
+        'Artificial Neural Networks',
+        'Artificial Intelligence',
+        'Random Forest Algorithm',
+        'Performance Tuning',
+        'Applied Machine Learning',
+        'Classification Algorithms',
+        'Transfer Learning',
+      ],
+    },
+  ],
+  manual: [
+    // {
+    //   title: 'Face Recognition Attendance System',
+    //   issuer: 'NIT Jalandhar',
+    //   date: '2025-01',
+    //   url: 'https://...',              // credential / project link
+    //   logo: null,                      // optional: 'assets/images/logo.png'
+    //   skills: ['OpenCV', 'Python'],
+    //   description: 'Short blurb describing what was accomplished.',
+    // },
+  ],
+};
 
 export const highlights = [
   {

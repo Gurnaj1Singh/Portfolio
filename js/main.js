@@ -1,8 +1,9 @@
 import {
-  profile, socials, doList, techStack, proficiency,
-  education, experience, highlights, languageColor,
+  profile, socials, professionalExperience, techStack,
+  education, experience, highlights, certifications, languageColor,
 } from './data.js';
 import { fetchRepos, sortRepos, filterByLanguage, languageCounts } from './github.js';
+import { enrichAllCoursera } from './coursera.js';
 
 /* -------------------- helpers -------------------- */
 const $ = (sel, root = document) => root.querySelector(sel);
@@ -147,15 +148,19 @@ function initAvatar() {
 }
 
 /* -------------------- skills -------------------- */
-const boltSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>';
-
 function renderSkills() {
   const list = $('#doList');
-  doList.forEach((text) => {
+  professionalExperience.forEach((item) => {
     list.append(
-      el('li', {},
-        el('span', { class: 'bolt', html: boltSvg, 'aria-hidden': 'true' }),
-        el('span', {}, text)
+      el('li', { class: 'pro-exp-item' },
+        el('div', { class: 'pro-exp-head' },
+          el('strong', { class: 'pro-exp-category' }, item.category),
+          item.project ? el('span', { class: 'pro-exp-project' }, item.project) : null,
+        ),
+        el('p', { class: 'pro-exp-desc' }, item.description),
+        el('div', { class: 'pro-exp-stack' },
+          ...item.stack.map((s) => el('span', { class: 'topic' }, s))
+        )
       )
     );
   });
@@ -170,29 +175,6 @@ function renderSkills() {
     );
   });
 
-  const bars = $('#proficiencyBars');
-  proficiency.forEach((p) => {
-    const fill = el('span', { class: 'bar-fill' });
-    bars.append(
-      el('li', { class: 'bar-item' },
-        el('div', { class: 'bar-head' },
-          el('strong', {}, p.name),
-          el('span', {}, p.value + '%')
-        ),
-        el('div', { class: 'bar-track' }, fill)
-      )
-    );
-    // Animate width when bars enter viewport
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          fill.style.width = p.value + '%';
-          io.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    io.observe(fill);
-  });
 }
 
 /* -------------------- education & experience -------------------- */
@@ -235,6 +217,131 @@ function renderHighlights() {
       )
     );
   });
+}
+
+/* -------------------- certifications -------------------- */
+const verifySvg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>';
+const linkSvg = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>';
+
+function formatCertDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
+}
+
+function certSkeleton() {
+  return el('article', { class: 'cert-card cert-skeleton', 'aria-hidden': 'true' },
+    el('div', { class: 'cert-media skeleton' }),
+    el('div', { class: 'cert-body' },
+      el('div', { class: 'skeleton skel-line skel-issuer' }),
+      el('div', { class: 'skeleton skel-line skel-title' }),
+      el('div', { class: 'skeleton skel-line skel-desc' })
+    )
+  );
+}
+
+function certCard(cert) {
+  const isCoursera = cert.source === 'coursera';
+  const media = cert.image
+    ? el('div', { class: 'cert-media' },
+        el('img', { src: cert.image, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' })
+      )
+    : el('div', { class: 'cert-media cert-media-fallback' },
+        el('span', { 'aria-hidden': 'true' }, isCoursera ? 'C' : (cert.issuer || '?').charAt(0))
+      );
+
+  const issuerRow = el('div', { class: 'cert-issuer' },
+    cert.issuerLogo
+      ? el('img', { src: cert.issuerLogo, alt: '', loading: 'lazy', referrerpolicy: 'no-referrer' })
+      : null,
+    el('span', {}, cert.issuer || 'Issued credential'),
+    cert.completedOn ? el('span', { class: 'cert-dot' }, '·') : null,
+    cert.completedOn ? el('time', { datetime: cert.completedOn }, formatCertDate(cert.completedOn)) : null
+  );
+
+  const skills = (cert.skills || []).length
+    ? el('ul', { class: 'cert-skills' },
+        ...cert.skills.map((s) => el('li', {}, s))
+      )
+    : null;
+
+  const primaryHref = isCoursera ? cert.verifyUrl : cert.url;
+  const primaryLabel = isCoursera ? 'Verify' : 'View credential';
+  const actions = el('div', { class: 'cert-actions' },
+    primaryHref
+      ? el('a', { class: 'cert-btn cert-btn-primary', href: primaryHref, target: '_blank', rel: 'noopener' },
+          el('span', { html: verifySvg }), primaryLabel)
+      : null,
+    isCoursera && cert.courseUrl
+      ? el('a', { class: 'cert-btn', href: cert.courseUrl, target: '_blank', rel: 'noopener' },
+          'Course', el('span', { html: linkSvg }))
+      : null
+  );
+
+  return el('article', { class: 'cert-card reveal' + (cert.degraded ? ' is-degraded' : '') },
+    media,
+    el('div', { class: 'cert-body' },
+      issuerRow,
+      el('h3', { class: 'cert-title' }, cert.title || 'Certificate'),
+      cert.description ? el('p', { class: 'cert-desc' }, cert.description) : null,
+      skills,
+      actions
+    )
+  );
+}
+
+function manualToCertShape(m) {
+  return {
+    title: m.title,
+    description: m.description || '',
+    image: m.logo || null,
+    issuer: m.issuer,
+    issuerLogo: m.logo || null,
+    completedOn: m.date,
+    url: m.url,
+    skills: m.skills || [],
+    source: 'manual',
+  };
+}
+
+async function renderCertifications() {
+  const grid = $('#certGrid');
+  const stateEl = $('#certState');
+  if (!grid) return;
+
+  const coursera = (certifications && certifications.coursera) || [];
+  const manual = (certifications && certifications.manual) || [];
+
+  if (!coursera.length && !manual.length) {
+    grid.innerHTML = '';
+    if (stateEl) stateEl.textContent = 'No certifications configured yet.';
+    return;
+  }
+
+  grid.innerHTML = '';
+  const skeletonCount = Math.max(coursera.length, 1);
+  for (let i = 0; i < skeletonCount; i++) grid.append(certSkeleton());
+  manual.forEach((m) => grid.append(certCard(manualToCertShape(m))));
+
+  if (!coursera.length) return;
+
+  try {
+    const enriched = await enrichAllCoursera(coursera);
+    grid.querySelectorAll('.cert-skeleton').forEach((n) => n.remove());
+    enriched.forEach((c) => {
+      const card = certCard(c);
+      grid.insertBefore(card, grid.firstChild);
+      observeReveal(card);
+    });
+    if (stateEl && enriched.some((c) => c.degraded)) {
+      stateEl.textContent = 'Some live data could not be loaded — showing minimal cards.';
+    }
+  } catch (err) {
+    console.warn('[certifications] render failed:', err);
+    if (stateEl) stateEl.textContent = 'Live course data unavailable.';
+    grid.querySelectorAll('.cert-skeleton').forEach((n) => n.remove());
+  }
 }
 
 /* -------------------- projects -------------------- */
@@ -467,19 +574,25 @@ function initContactForm() {
 }
 
 /* -------------------- reveal on scroll -------------------- */
+let revealObserver = null;
+function observeReveal(node) {
+  if (!revealObserver) return;
+  node.querySelectorAll?.('.reveal').forEach((n) => revealObserver.observe(n));
+  if (node.classList?.contains('reveal')) revealObserver.observe(node);
+}
 function initReveal() {
-  const io = new IntersectionObserver(
+  revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) {
           e.target.classList.add('in');
-          io.unobserve(e.target);
+          revealObserver.unobserve(e.target);
         }
       });
     },
     { threshold: 0.12 }
   );
-  $$('.reveal').forEach((n) => io.observe(n));
+  $$('.reveal').forEach((n) => revealObserver.observe(n));
 }
 
 /* -------------------- footer year -------------------- */
@@ -510,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSkills();
   renderTimeline('#educationTimeline', education);
   renderTimeline('#experienceTimeline', experience);
-  renderHighlights();
+  renderCertifications();
   initModal();
   initContactForm();
   initFooter();

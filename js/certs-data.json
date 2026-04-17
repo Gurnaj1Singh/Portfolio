@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-04-17T10:52:50.732Z",
+  "courses": {
+    "introduction-git-github": {
+      "slug": "introduction-git-github",
+      "title": "Introduction to Git and GitHub",
+      "description": "In this course, you’ll learn how to keep track of the different versions of your code and configuration files using a popular version control system (VCS) called Git. We'll also go through how to set up an account with a service called GitHub so that you can create your very own remote repositories to store your code and configuration.\n\nThroughout this course, you'll learn about Git's core functionality so you can understand how and why it’s used in organizations. We’ll look into both basic and more advanced features, like branches and merging. We'll demonstrate how having a working knowledge of a VCS like Git can be a lifesaver in emergency situations or when debugging. And then we'll explore how to use a VCS to work with others through remote repositories, like the ones provided by GitHub. By the end of this course, you'll be able to store your code's history in Git and collaborate with others in GitHub, where you’ll also start creating your own portfolio! In order to follow along and complete the assessments, you’ll need a computer where you can install Git or ask your administrator to install it for you.",
+      "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/8f/b1e3268725450bbb123240f40c2f03/Copy-of-Google_Chelsea_RR_0235.jpg",
+      "issuer": "Google",
+      "issuerLogo": "http://coursera-university-assets.s3.amazonaws.com/92/d0d1ee4a844037be9a2d349ee5f59d/GoogleG_FullColor_RGB.png",
+      "courseUrl": "https://www.coursera.org/learn/introduction-git-github",
+      "fetchedAt": "2026-04-17T10:52:48.611Z"
+    },
+    "machine-learning": {
+      "slug": "machine-learning",
+      "title": "Supervised Machine Learning: Regression and Classification ",
+      "description": "In the first course of the Machine Learning Specialization, you will:\n• Build machine learning models in Python using popular machine learning libraries NumPy and scikit-learn.\n• Build and train supervised machine learning models for prediction and binary classification tasks, including linear regression and logistic regression\n\nThe Machine Learning Specialization is a foundational online program created in collaboration between DeepLearning.AI and Stanford Online. In this beginner-friendly program, you will learn the fundamentals of machine learning and how to use these techniques to build real-world AI applications. \n\nThis Specialization is taught by Andrew Ng, an AI visionary who has led critical research at Stanford University and groundbreaking work at Google Brain, Baidu, and Landing.AI to advance the AI field.\n\nThis 3-course Specialization is an updated and expanded version of Andrew’s pioneering Machine Learning course, rated 4.9 out of 5 and taken by over 4.8 million learners since it launched in 2012. \n\nIt provides a broad introduction to modern machine learning, including supervised learning (multiple linear regression, logistic regression, neural networks, and decision trees), unsupervised learning (clustering, dimensionality reduction, recommender systems), and some of the best practices used in Silicon Valley for artificial intelligence and machine learning innovation (evaluating and tuning models, taking a data-centric approach to improving performance, and more.)\n\nBy the end of this Specialization, you will have mastered key concepts and gained the practical know-how to quickly and powerfully apply machine learning to challenging real-world problems. If you’re looking to break into AI or build a career in machine learning, the new Machine Learning Specialization is the best place to start.",
+      "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/9c/90ae67ecdb4185a4ae79ec9a5ae0b6/Course-Logo--1.png",
+      "issuer": "DeepLearning.AI",
+      "issuerLogo": "http://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png",
+      "courseUrl": "https://www.coursera.org/learn/machine-learning",
+      "fetchedAt": "2026-04-17T10:52:50.020Z"
+    },
+    "advanced-learning-algorithms": {
+      "slug": "advanced-learning-algorithms",
+      "title": "Advanced Learning Algorithms",
+      "description": "In the second course of the Machine Learning Specialization, you will:\n• Build and train a neural network with TensorFlow to perform multi-class classification\n• Apply best practices for machine learning development so that your models generalize to data and tasks in the real world\n• Build and use decision trees and tree ensemble methods, including random forests and boosted trees\n\nThe Machine Learning Specialization is a foundational online program created in collaboration between DeepLearning.AI and Stanford Online. In this beginner-friendly program, you will learn the fundamentals of machine learning and how to use these techniques to build real-world AI applications. \n\nThis Specialization is taught by Andrew Ng, an AI visionary who has led critical research at Stanford University and groundbreaking work at Google Brain, Baidu, and Landing.AI to advance the AI field.\n\nThis 3-course Specialization is an updated and expanded version of Andrew’s pioneering Machine Learning course, rated 4.9 out of 5 and taken by over 4.8 million learners since it launched in 2012. \n\nIt provides a broad introduction to modern machine learning, including supervised learning (multiple linear regression, logistic regression, neural networks, and decision trees), unsupervised learning (clustering, dimensionality reduction, recommender systems), and some of the best practices used in Silicon Valley for artificial intelligence and machine learning innovation (evaluating and tuning models, taking a data-centric approach to improving performance, and more.)\n\nBy the end of this Specialization, you will have mastered key theoretical concepts and gained the practical know-how to quickly and powerfully apply machine learning to challenging real-world problems. If you’re looking to break into AI or build a career in machine learning, the new Machine Learning Specialization is the best place to start.",
+      "image": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-course-photos.s3.amazonaws.com/78/f17b8da6f949f28a5e35a70bf5a837/MLS.course-banners-01_Course-Logo-2---DLAI-web.png",
+      "issuer": "DeepLearning.AI",
+      "issuerLogo": "http://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png",
+      "courseUrl": "https://www.coursera.org/learn/advanced-learning-algorithms",
+      "fetchedAt": "2026-04-17T10:52:50.732Z"
+    }
+  }
+}
